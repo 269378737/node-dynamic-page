@@ -6,9 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run dev",
-    "build": "tsc",
+    "build": "gulp clean-build && npm uninstall @types/koa @types/koa-router && tsc && gulp copy-assets && npm install @types/koa@2.0.50 @types/koa-router --save-dev",
     "dev": "nodemon --watch ./src/**/* --exec ts-node ./src/index.ts",
-    "pkg-win": "npm run build && pkg -t node8-win-x64 --output=./dist/win64/app ."
+    "pkg-win": "gulp clean-dist && npm run build && pkg -t node8-win-x64 --output=./dist/win64/app .",
+    "gulp-test": "gulp copy-assets"
   },
   "bin": "./build/index.js",
   "pkg": {
@@ -23,7 +24,11 @@
     "koa-views": "^6.2.1"
   },
   "devDependencies": {
+    "@types/koa": "^2.0.50",
+    "@types/koa-router": "^7.0.42",
     "cross-env": "^6.0.3",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
     "nodemon": "^2.0.1",
     "pkg": "^4.4.1",
     "ts-node": "^8.5.4",

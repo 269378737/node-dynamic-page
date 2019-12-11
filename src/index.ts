@@ -2,6 +2,7 @@
 import * as Koa from 'koa';
 import * as KoaViews from 'koa-views';
 import * as path from 'path';
+import { serverConfig } from "./config/server";
 
 import { router } from "./routers/index";
 
@@ -18,4 +19,7 @@ app.use(KoaViews(path.join(__dirname, './views/'), {
 router.use(app);
 
 
-app.listen(22303, () => console.log(`the server is running on port 22303, please click http://localhost:22303 to visit it`));
+app.listen(serverConfig.port, () => console.log(`
+the service started successfully \n
+open http://localhost:${serverConfig.port} in browser!`
+));

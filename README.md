@@ -27,7 +27,7 @@
 
 ## 注意
 
-项目中未安装 `Koa` 和 `koa-router` 对应的 `Typescript` 声明包（`@types/koa` 和 `@types/koa-router`），因为安装了之后使用 `tsc` 命令将 `ts` 编译成 `js` 会报错，大致意思是 `Koa` 未导出某个声明，但在其他地方有引用。
+项目在编译 `ts` 的时候先删除了 `@types/koa` 和 `@types/koa-router`，因为不删除的话使用 `tsc` 命令将 `ts` 编译成 `js` 会报错，大致意思是 `Koa` 未导出某个声明，但在其他地方有引用。在编译完成后再重新安装
 
 
 
