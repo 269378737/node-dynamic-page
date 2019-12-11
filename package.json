@@ -5,8 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc && node dist/index.js",
-    "dev": "nodemon --watch ./src/**/* --exec ts-node ./src/index.ts"
+    "start": "npm run dev",
+    "build": "tsc",
+    "dev": "nodemon --watch ./src/**/* --exec ts-node ./src/index.ts",
+    "pkg-win": "npm run build && pkg -t node8-win-x64 --output=./dist/win64/app ."
+  },
+  "bin": "./build/index.js",
+  "pkg": {
+    "assets": "./build/views/**/*"
   },
   "author": "",
   "license": "ISC",
@@ -17,10 +23,9 @@
     "koa-views": "^6.2.1"
   },
   "devDependencies": {
-    "@types/koa": "^2.0.50",
-    "@types/koa-router": "^7.0.42",
     "cross-env": "^6.0.3",
     "nodemon": "^2.0.1",
+    "pkg": "^4.4.1",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.3"
   }
