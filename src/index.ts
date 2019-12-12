@@ -4,8 +4,9 @@ import * as KoaViews from 'koa-views';
 import * as KoaStatic from "koa-static";
 import * as path from 'path';
 import { serverConfig } from "./config/server";
-
 import { router } from "./routers/index";
+
+import './core/template-register';
 
 const app = new Koa();
 
