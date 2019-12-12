@@ -21,11 +21,13 @@
     "handlebars": "^4.5.3",
     "koa": "^2.11.0",
     "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
     "koa-views": "^6.2.1"
   },
   "devDependencies": {
     "@types/koa": "^2.0.50",
     "@types/koa-router": "^7.0.42",
+    "@types/koa-static": "^4.0.1",
     "cross-env": "^6.0.3",
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",

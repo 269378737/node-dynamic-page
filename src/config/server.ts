@@ -1,3 +1,3 @@
 export const serverConfig = {
-    port: '22302'
+    port: '5505'
 }
